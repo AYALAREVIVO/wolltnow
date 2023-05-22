@@ -12,7 +12,6 @@ const money=txt.replace(/[^\d\.]*/g, '')
 const numMoney=Number(money)
 // const num=numMoney-(numMoney%5)
 
-//AA
 web.open('https://wolt.com/he/discovery');
 web.click('/html/body/div[5]/div/div/div/button[2]');
 
