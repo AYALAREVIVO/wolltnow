@@ -1,7 +1,10 @@
+
+web.transaction('01')
 web.init();
 web.open('https://www.cibus-sodexo.co.il/');
 web.selectFrame("/html/body/div[1]/section/div[3]/iframe");
 
+web.transaction('02')
 
 web.type("id=txtUsr","ayala.revivo@verisoft.co" );
 web.type("id=txtPas","AYALAREVIVO1!" );
@@ -11,7 +14,7 @@ const txt=web.getText("/html/body/div[1]/div[1]/div[1]/div[2]/div[1]/table/tbody
 const money=txt.replace(/[^\d\.]*/g, '')
 const numMoney=Number(money)
 const num=numMoney-(numMoney%5)
-
+web.transaction('03')
 web.open('https://wolt.com/he/discovery');
 web.click('/html/body/div[5]/div/div/div/button[2]');
 
