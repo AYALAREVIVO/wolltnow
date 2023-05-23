@@ -1,39 +1,39 @@
 
 web.transaction('01')
-web.init();
-web.open('https://www.cibus-sodexo.co.il/');
-web.selectFrame("/html/body/div[1]/section/div[3]/iframe");
+web.init()
+web.open('https://www.cibus-sodexo.co.il/')
+web.selectFrame("/html/body/div[1]/section/div[3]/iframe")
 
 web.transaction('02')
 
-web.type("id=txtUsr","ayala.revivo@verisoft.co" );
-web.type("id=txtPas","AYALAREVIVO1!" );
-web.click('id=btnLogin');
+web.type("id=txtUsr","ayala.revivo@verisoft.co" )
+web.type("id=txtPas","AYALAREVIVO1!" )
+web.click('id=btnLogin')
 web.waitForExist("/html/body/div[1]/div[1]/div[1]/div[2]/div[1]/table/tbody/tr[1]/td[1]/a/span[3]")
 const txt=web.getText("/html/body/div[1]/div[1]/div[1]/div[2]/div[1]/table/tbody/tr[1]/td[1]/a/span[3]")
 const money=txt.replace(/[^\d\.]*/g, '')
 const numMoney=Number(money)
 const num=numMoney-(numMoney%5)
 web.transaction('03')
-web.open('https://wolt.com/he/discovery');
-web.click('/html/body/div[5]/div/div/div/button[2]');
+web.open('https://wolt.com/he/discovery')
+web.click('/html/body/div[5]/div/div/div/button[2]')
 
 
 web.click('//*[@id="mainContent"]/div[1]/div/div[1]/header/div[2]/div[3]/div/div/button');
 web.waitForExist('//*[contains(text(),"כניסה דרך גוגל")]')
 
-web.click('//*[contains(text(),"כניסה דרך גוגל")]');
+web.click('//*[contains(text(),"כניסה דרך גוגל")]')
 
-web.type("id=identifierId","ayala.revivo@verisoft.co" );
+web.type("id=identifierId","ayala.revivo@verisoft.co" )
 
-web.click('//*[@id="identifierNext"]/div/button');
+web.click('//*[@id="identifierNext"]/div/button')
 
 
 web.waitForExist("name=Passwd")
 //anuther Page
-web.type("name=Passwd","AYALAREVIVO1!");
+web.type("name=Passwd","AYALAREVIVO1!")
 
-web.click('//*[@id="passwordNext"]/div/button');
+web.click('//*[@id="passwordNext"]/div/button')
 
 
 
