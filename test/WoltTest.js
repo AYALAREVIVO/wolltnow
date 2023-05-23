@@ -10,7 +10,7 @@ web.waitForExist("/html/body/div[1]/div[1]/div[1]/div[2]/div[1]/table/tbody/tr[1
 const txt=web.getText("/html/body/div[1]/div[1]/div[1]/div[2]/div[1]/table/tbody/tr[1]/td[1]/a/span[3]")
 const money=txt.replace(/[^\d\.]*/g, '')
 const numMoney=Number(money)
-// const num=numMoney-(numMoney%5)
+const num=numMoney-(numMoney%5)
 
 web.open('https://wolt.com/he/discovery');
 web.click('/html/body/div[5]/div/div/div/button[2]');
@@ -38,8 +38,8 @@ web.click('//*[@id="passwordNext"]/div/button');
 web.waitForExist('//*[contains(text(),"רכישת")]')
 web.click('//*[contains(text(),"רכישת")]');
 
-const num=37-(37%5)
-log.info(num)
+// const num=37-(37%5)
+// log.info(num)
 const s='//*[contains(text(),"‫גיפט קארד - '+num+' ₪")]'
 web.waitForExist(s)
 
